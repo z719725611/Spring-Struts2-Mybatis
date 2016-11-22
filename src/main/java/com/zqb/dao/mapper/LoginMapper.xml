@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqb.dao.mapper.LoginMapper">
+
+    <select  id="getUserId"  resultType="String" parameterType="Login">
+        select username from loginuser where userid=#{userid}
+    </select>
+
+    <select  id="getUserName"  resultType="com.zqb.bean.Login" parameterType="com.zqb.bean.Login">
+        select * from loginuser where userid=#{userid}
+    </select>
+
+    <update id="updateUser" parameterType="Login">
+        UPDATE loginuser SET username=#{username} WHERE userid=#{userid}
+    </update>
+
+
+</mapper>
